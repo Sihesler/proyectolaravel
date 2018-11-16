@@ -19,5 +19,17 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@home')->name('home');
 
+Route::get('/listarestudiante', 'EstudianteController@index')->name('listarestudiante');
+
+Route::post('/estudiante/store', 'EstudianteController@store');
+Route::get('/estudiantecreate', 'EstudianteController@create');
+
+
+//Route::post('/estudiante/update', 'EstudianteController@update');
+//Route::get('/estudianteedit/', 'EstudianteController@edit');
+
+Route::get('/estudianteedit{idestudiante}', 'EstudianteController@edit');
+Route::post('/estudiante/update/{idestudiante}', 'EstudianteController@update');
+Route::get('estudiante/delete/{idestudiante}', 'EstudianteController@delete');
 
 //////////////

@@ -13,7 +13,7 @@
 
     <title> Bootstrap</title>
 
-    @yield('head')
+
 
 
   </head>
@@ -32,15 +32,15 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Menú</a>
+            <a class="navbar-brand" href="{{ url('/home') }}">Menú</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Estudiantes <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Estudiantes <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Listar Estudiantes</a></li>
+                  <li><a href="/listarestudiante">Listar Estudiantes</a></li>
                 </ul>
               </li>
 
