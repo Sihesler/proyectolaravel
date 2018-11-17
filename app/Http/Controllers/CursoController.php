@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Estudiante;
+use App\Curso;
 use DB;
 
-class EstudianteController extends Controller
+class CursoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class EstudianteController extends Controller
     public function index()
     {
         //
-        $estudiantes = Estudiante::all();
-        return view('/listar_estudiante', ['estudiantes' =>$estudiantes]);
+        $cursos = Curso::all();
+        return view('/listar_curso', ['cursos' =>$cursos]);
     }
 
     /**
@@ -27,7 +27,7 @@ class EstudianteController extends Controller
      */
     public function create()
     {
-        return view ('/crear_estudiante');
+        return view ('/crear_curso');
     }
 
     /**
@@ -38,15 +38,12 @@ class EstudianteController extends Controller
      */
     public function store(Request $request)
     {
-        //a
-        $nombre = $request->input('nombre') ;
-        $edad = $request->input('edad') ;
-        $fecha = $request->input('fecha') ;
-        $direccion = $request->input('direccion') ;
+        $materia = $request->input('materia') ;
+        $profesor = $request->input('profesor') ;
+        $hora = $request->input('hora') ;
           
-      DB::insert('insert into estudiante (nombre, edad, fecha_nacimiento, direccion) values(?,?,?,?) ',[$nombre, $edad, $fecha, $direccion ]);
-        return redirect('/listarestudiante')->with('info', 'Estudiante agregado');
-
+      DB::insert('insert into curso (materia, profesor, hora) values(?,?,?) ',[$materia, $profesor, $hora]);
+        return redirect('/listarcurso')->with('info', 'Curso agregado');
     }
 
     /**
@@ -68,8 +65,8 @@ class EstudianteController extends Controller
      */
     public function edit($id)
     {
-        $estudiante=estudiante::where('idestudiante',$id)->first();
-        return view('/editar_estudiante',['estudiante'=>$estudiante]);
+        $curso=curso::where('idcurso',$id)->first();
+        return view('/editar_curso',['curso'=>$curso]);
     }
 
     /**
@@ -82,23 +79,21 @@ class EstudianteController extends Controller
     public function update(Request $request, $id)
     {
         $this->Validate($request, [
-            'nombre' => 'required',
-            'edad' => 'required',
-            'fecha' => 'required',
-            'direccion' => 'required'
+            'materia' => 'required',
+            'profesor' => 'required',
+            'hora' => 'required'
             
           
         ]);
         $data = array(
-            'nombre' => $request->input('nombre'),
-            'edad' => $request->input('edad'),
-            'fecha_nacimiento' => $request->input('fecha'),
-            'direccion' => $request->input('direccion')
+            'materia' => $request->input('materia'),
+            'profesor' => $request->input('profesor'),
+            'hora' => $request->input('hora')
             
         );
         
-        estudiante::where('idestudiante',$id)->update($data);      
-        return redirect('/listarestudiante')->with('info', 'estudiante actualizado');
+        curso::where('idcurso',$id)->update($data);      
+        return redirect('/listarcurso')->with('info', 'Curso actualizado');
     }
 
     /**
@@ -109,8 +104,7 @@ class EstudianteController extends Controller
      */
     public function delete($id)
     {
-        //
-        Estudiante::where('idestudiante', $id)->delete();        
-        return redirect('/listarestudiante')->with('info', 'Estudiante eliminado');
+        Curso::where('idcurso', $id)->delete();        
+        return redirect('/listarcurso')->with('info', 'Curso eliminado');
     }
 }
