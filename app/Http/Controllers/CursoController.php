@@ -42,7 +42,7 @@ class CursoController extends Controller
         $profesor = $request->input('profesor') ;
         $hora = $request->input('hora') ;
           
-      DB::insert('insert into curso (materia, profesor, hora) values(?,?,?) ',[$materia, $profesor, $hora]);
+        DB::insert('insert into curso (materia, profesor, hora) values(?,?,?) ',[$materia, $profesor, $hora]);
         return redirect('/listarcurso')->with('info', 'Curso agregado');
     }
 

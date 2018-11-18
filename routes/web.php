@@ -28,6 +28,7 @@ Route::get('/estudianteedit{idestudiante}', 'EstudianteController@edit');
 Route::post('/estudiante/update/{idestudiante}', 'EstudianteController@update');
 Route::get('/estudiante/delete/{idestudiante}', 'EstudianteController@delete');
 
+
 //CRUD de cursos
 Route::get('/listarcurso', 'CursoController@index')->name('listarcurso');
 Route::get('/cursocreate', 'CursoController@create');
@@ -35,3 +36,12 @@ Route::post('/curso/store', 'CursoController@store');
 Route::get('/cursoedit{idcurso}', 'CursoController@edit');
 Route::post('/curso/update/{idcurso}', 'CursoController@update');
 Route::get('/curso/delete/{idcurso}', 'CursoController@delete');
+
+
+//CRUD de asignacion
+Route::get('/listarasignacion', 'AsignacionController@index')->name('listarasignacion');
+Route::get('/asignacioncreate', 'AsignacionController@create');
+Route::post('/asignacion/store', 'AsignacionController@store');	
+Route::get('/asignacionedit{idasignacion}', 'AsignacionController@edit');
+Route::post('/asignacion/update/{idasignacion}', 'AsignacionController@update');
+Route::get('/asignacion/delete/{idasignacion}', 'AsignacionController@delete');

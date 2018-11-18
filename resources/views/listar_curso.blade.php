@@ -4,6 +4,7 @@
 
 
 <table class="table table-striped table-hover ">
+  <h1>Lista de Cursos</h1>
   <a href="{{ url('/cursocreate') }}" class="btn btn-primary" > Nuevo </a> 
   <thead>
     <tr>

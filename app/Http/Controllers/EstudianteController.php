@@ -44,7 +44,7 @@ class EstudianteController extends Controller
         $fecha = $request->input('fecha') ;
         $direccion = $request->input('direccion') ;
           
-      DB::insert('insert into estudiante (nombre, edad, fecha_nacimiento, direccion) values(?,?,?,?) ',[$nombre, $edad, $fecha, $direccion ]);
+        DB::insert('insert into estudiante (nombre, edad, fecha_nacimiento, direccion) values(?,?,?,?) ',[$nombre, $edad, $fecha, $direccion ]);
         return redirect('/listarestudiante')->with('info', 'Estudiante agregado');
 
     }

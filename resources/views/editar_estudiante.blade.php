@@ -7,11 +7,11 @@
       {{ csrf_field() }}
 
 <div class="form-group">
-          <label for="inputEmail" class="col-lg-2 control-label">Nombre estudiante</label> 
-          <div class="col-lg-10">
-            <input type="text" value="{{ $estudiante->nombre}}" class="form-control" name="nombre" id="inputEmail" placeholder="Nombre estudiante">
-          </div>
-        </div>
+  <label for="inputEmail" class="col-lg-2 control-label">Nombre estudiante</label> 
+  <div class="col-lg-10">
+    <input type="text" value="{{ $estudiante->nombre}}" class="form-control" name="nombre" id="inputEmail" placeholder="Nombre estudiante">
+  </div>
+</div>
 
 
 <div class="form-group">

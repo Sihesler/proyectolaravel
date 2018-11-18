@@ -5,6 +5,8 @@
 
 <form class="form-horizontal" method="POST" action="{{ url('/estudiante/store')}}">
       {{ csrf_field() }}
+
+      <h1>Nuevo Estudiante</h1>
       
 <div class="form-group">
   <label for="inputEmail" class="col-lg-2 control-label"> Nombre </label>

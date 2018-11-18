@@ -4,6 +4,9 @@
 
 
 <table class="table table-striped table-hover ">
+
+  <h1>Lista de Estudiantes</h1>
+
   <a href="{{ url('/estudiantecreate') }}" class="btn btn-primary" > Nuevo </a> 
   <thead>
     <tr>

@@ -3,6 +3,6 @@
 
 @section('content')
 	
-	<h1> Bienvenidossssss </h1>
+	<h1> Bienvenidos </h1>
 
 @stop

@@ -6,6 +6,7 @@
 <form class="form-horizontal" method="POST" action="{{ url('/curso/store')}}">
       {{ csrf_field() }}
       
+      <h1>Nuevo Curso</h1>
 <div class="form-group">
   <label for="inputEmail" class="col-lg-2 control-label"> Materia </label>
   <div class="col-lg-10">
